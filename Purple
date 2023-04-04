@@ -1,44 +1,298 @@
---Kill Hub -- My Hub
--- Instances:
+--[[
+	Roblox2Lua
+	----------
+	
+	This code was generated using
+	Deluct's Roblox2Lua plugin.
+]]--
+
+--// Instances
 while wait() do
-    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("ScreenGui") then
-            local ScreenGui = Instance.new("ScreenGui")
-            local Frame = Instance.new("Frame")
-            local TextLabel = Instance.new("TextLabel")
-            local TextButton = Instance.new("TextButton")
-            --Properties:
-            ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")   
-            ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-            Frame.Parent = ScreenGui
-            Frame.AnchorPoint = Vector2.new(0.5, 0.5)
-            Frame.BackgroundColor3 = Color3.fromRGB(146, 52, 255)
-            Frame.Position = UDim2.new(0.499453038, 0, 0.499742299, 0)
-            Frame.Size = UDim2.new(0.509036839, 14, 0.441477776, 0)
 
-            TextLabel.Parent = Frame
-            TextLabel.BackgroundColor3 = Color3.fromRGB(101, 75, 255)
-            TextLabel.BackgroundTransparency = 0.500
-            TextLabel.Size = UDim2.new(0.997476876, 0, 0.0755039901, 0)
-            TextLabel.Font = Enum.Font.FredokaOne
-            TextLabel.Text = "Purple man's Hub"
-            TextLabel.TextColor3 = Color3.fromRGB(255, 239, 244)
-            TextLabel.TextScaled = true
-            TextLabel.TextSize = 14.000
-            TextLabel.TextWrapped = true
+    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("U") then
+local u = Instance.new("ScreenGui")
+u.IgnoreGuiInset = false
+u.ResetOnSpawn = true
+u.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+u.Name = "U"
+        u.Parent = game.Players.LocalPlayer.PlayerGui
+        u.Parent = game.Players.LocalPlayer.PlayerGui
 
-            TextButton.Parent = Frame
-            TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 17)
-            TextButton.Position = UDim2.new(0.27369377, 0, 0.397389412, 0)
-            TextButton.Size = UDim2.new(0.432945013, 0, 0.198694706, 0)
-            TextButton.Font = Enum.Font.IndieFlower
-            TextButton.Text = "Kill me"
-            TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-            TextButton.TextScaled = true
-            TextButton.TextSize = 14.000
-            TextButton.TextWrapped = true
-            TextButton.MouseButton1Click:Connect(function()
-                game.Players.LocalPlayer.Character.Humanoid.Health = 0
-            end)
-            end
-end
+local frame = Instance.new("Frame")
+        frame.Active = true
+        frame.Draggable = true
+frame.AnchorPoint = Vector2.new(0.5, 0.5)
+frame.BackgroundColor3 = Color3.new(0.572549, 0.203922, 1)
+frame.BackgroundTransparency = 1
+frame.BorderSizePixel = 0
+frame.Position = UDim2.new(0.700589359, -40, 0.659633934, -11)
+frame.Selectable = true
+frame.Size = UDim2.new(0.27721867, 14, 0.392697304, 0)
+frame.Visible = true
+frame.Parent = u
+
+local scrolling_frame = Instance.new("ScrollingFrame")
+scrolling_frame.CanvasSize = UDim2.new(0, 0, 12, 0)
+scrolling_frame.ScrollBarThickness = 8
+scrolling_frame.ScrollingDirection = Enum.ScrollingDirection.Y
+scrolling_frame.VerticalScrollBarInset = Enum.ScrollBarInset.Always
+scrolling_frame.Active = true
+scrolling_frame.BackgroundColor3 = Color3.new(0.572549, 0.203922, 1)
+scrolling_frame.Position = UDim2.new(-0.0038766549, 0, 0, 0)
+scrolling_frame.Size = UDim2.new(0.856327057, 14, 0.781091154, 0)
+scrolling_frame.Visible = true
+scrolling_frame.Parent = frame
+
+local text_label = Instance.new("TextLabel")
+text_label.Font = Enum.Font.FredokaOne
+text_label.Text = "Purple man's Hub"
+text_label.TextColor3 = Color3.new(0, 0, 0)
+text_label.TextScaled = true
+text_label.TextSize = 14
+text_label.TextWrapped = true
+text_label.BackgroundColor3 = Color3.new(0.396078, 0.294118, 1)
+text_label.BackgroundTransparency = 0.5
+text_label.Size = UDim2.new(1, 0, 0.0399999991, -88)
+text_label.Visible = true
+text_label.Parent = scrolling_frame
+
+local uicorner = Instance.new("UICorner")
+uicorner.CornerRadius = UDim.new(0, 12)
+uicorner.Parent = text_label
+
+local uistroke = Instance.new("UIStroke")
+uistroke.Color = Color3.new(0.988235, 0.996078, 1)
+uistroke.Parent = text_label
+
+local kil_me = Instance.new("TextButton")
+kil_me.Font = Enum.Font.IndieFlower
+kil_me.Text = "Kill me"
+kil_me.TextColor3 = Color3.new(0, 0, 0)
+kil_me.TextScaled = true
+kil_me.TextSize = 14
+kil_me.TextWrapped = true
+kil_me.BackgroundColor3 = Color3.new(1, 0, 0.0666667)
+kil_me.Position = UDim2.new(0.0272879489, 0, 0.0323332958, 0)
+kil_me.Size = UDim2.new(0.400000006, 0, 0, 30)
+kil_me.Visible = true
+kil_me.Name = "KilMe"
+kil_me.Parent = scrolling_frame
+
+local local_script = Instance.new("LocalScript")
+local_script.Parent = kil_me
+
+local uicorner_2 = Instance.new("UICorner")
+uicorner_2.CornerRadius = UDim.new(0, 2)
+uicorner_2.Parent = kil_me
+
+local uistroke_2 = Instance.new("UIStroke")
+uistroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_2.Color = Color3.new(0.74902, 0.027451, 0)
+uistroke_2.Thickness = 1.899999976158142
+uistroke_2.Parent = kil_me
+
+local submit = Instance.new("TextButton")
+submit.Font = Enum.Font.IndieFlower
+submit.Text = "Submit"
+submit.TextColor3 = Color3.new(0, 0, 0)
+submit.TextScaled = true
+submit.TextSize = 14
+submit.TextWrapped = true
+submit.BackgroundColor3 = Color3.new(0.447059, 0.929412, 0.411765)
+submit.Position = UDim2.new(0.465147942, 0, 0.0510338135, 0)
+submit.Size = UDim2.new(0.100000001, 2, 0, 27)
+submit.Visible = true
+submit.Name = "Submit"
+submit.Parent = scrolling_frame
+
+local uicorner_3 = Instance.new("UICorner")
+uicorner_3.CornerRadius = UDim.new(0, 2)
+uicorner_3.Parent = submit
+
+local uistroke_3 = Instance.new("UIStroke")
+uistroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_3.Thickness = 0.8999999761581421
+uistroke_3.Parent = submit
+
+local local_script_2 = Instance.new("LocalScript")
+local_script_2.Parent = submit
+
+local text_box = Instance.new("TextBox")
+text_box.CursorPosition = -1
+text_box.Font = Enum.Font.SourceSans
+text_box.PlaceholderText = "WalkSpeed Number"
+text_box.Text = ""
+text_box.TextColor3 = Color3.new(0, 0, 0)
+text_box.TextScaled = true
+text_box.TextSize = 14
+text_box.TextWrapped = true
+text_box.BackgroundColor3 = Color3.new(0.329412, 0.329412, 1)
+text_box.Position = UDim2.new(0.0275164861, 0, 0.0501355231, 0)
+text_box.Size = UDim2.new(0.400000006, 0, 0, 30)
+text_box.Visible = true
+text_box.Parent = scrolling_frame
+
+local uicorner_4 = Instance.new("UICorner")
+uicorner_4.CornerRadius = UDim.new(0, 2)
+uicorner_4.Parent = text_box
+
+local uistroke_4 = Instance.new("UIStroke")
+uistroke_4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_4.Thickness = 0.8999999761581421
+uistroke_4.Parent = text_box
+
+local tp = Instance.new("TextButton")
+tp.Font = Enum.Font.RobotoMono
+tp.Text = "Teleport tool"
+tp.TextColor3 = Color3.new(0, 0, 0)
+tp.TextScaled = true
+tp.TextSize = 14
+tp.TextWrapped = true
+tp.BackgroundColor3 = Color3.new(0.494118, 0.847059, 1)
+tp.Position = UDim2.new(0.0275583826, 0, 0.0138952322, 0)
+tp.Size = UDim2.new(0.400000006, 0, 0, 30)
+tp.Visible = true
+tp.Name = "Tp"
+tp.Parent = scrolling_frame
+
+local uicorner_5 = Instance.new("UICorner")
+uicorner_5.CornerRadius = UDim.new(0, 2)
+uicorner_5.Parent = tp
+
+local uistroke_5 = Instance.new("UIStroke")
+uistroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_5.Color = Color3.new(0.278431, 0.529412, 0.623529)
+uistroke_5.Thickness = 1.399999976158142
+uistroke_5.Parent = tp
+
+local local_script_3 = Instance.new("LocalScript")
+local_script_3.Parent = tp
+
+local infinity_yield = Instance.new("TextButton")
+infinity_yield.Font = Enum.Font.Unknown
+infinity_yield.Text = "Infinity Yield"
+infinity_yield.TextColor3 = Color3.new(0, 0, 0)
+infinity_yield.TextScaled = true
+infinity_yield.TextSize = 14
+infinity_yield.TextStrokeColor3 = Color3.new(0.517647, 0.517647, 0.517647)
+infinity_yield.TextWrapped = true
+infinity_yield.BackgroundColor3 = Color3.new(0.372549, 0.372549, 0.380392)
+infinity_yield.Position = UDim2.new(0.470485091, 0, 0.0138305034, 0)
+infinity_yield.Size = UDim2.new(0.528499842, 0, 0.023, 0)
+infinity_yield.Visible = true
+infinity_yield.Name = "Infinity Yield"
+infinity_yield.Parent = scrolling_frame
+
+local uicorner_6 = Instance.new("UICorner")
+uicorner_6.CornerRadius = UDim.new(0, 2)
+uicorner_6.Parent = infinity_yield
+
+local uistroke_6 = Instance.new("UIStroke")
+uistroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_6.Thickness = 0.8999999761581421
+uistroke_6.Parent = infinity_yield
+
+local local_script_4 = Instance.new("LocalScript")
+local_script_4.Parent = infinity_yield
+
+local uistroke_7 = Instance.new("UIStroke")
+uistroke_7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_7.Color = Color3.new(0.435294, 0.25098, 0.721569)
+uistroke_7.Thickness = 3.200000047683716
+uistroke_7.Parent = scrolling_frame
+
+local uicorner_7 = Instance.new("UICorner")
+uicorner_7.CornerRadius = UDim.new(0, 12)
+uicorner_7.Parent = scrolling_frame
+
+local uicorner_8 = Instance.new("UICorner")
+uicorner_8.CornerRadius = UDim.new(0, 12)
+uicorner_8.Parent = frame
+
+--//Modules
+
+local modules = {}
+
+--// Scripts
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	kil_me.MouseButton1Click:Connect(function()   
+	    game.Players.LocalPlayer.Character.Humanoid.Health = 0  
+	end)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_2
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+submit.MouseButton1Click:Connect(function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = text_box.Text
+end)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_3
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	tp.MouseButton1Click:Connect(function()
+	   local mouse = game.Players.LocalPlayer:GetMouse()
+	  local  tool = Instance.new("Tool")
+	    tool.RequiresHandle = false
+	    tool.Name = "Equip to Click TP"
+	    tool.Activated:connect(function()
+	        local pos = mouse.Hit+Vector3.new(0,2.5,0)
+	        pos = CFrame.new(pos.X,pos.Y,pos.Z)
+	        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+	    end)
+	    tool.Parent = game.Players.LocalPlayer.Backpack
+	    
+	end)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_4
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	infinity_yield.MouseButton1Click:Connect(function()  
+	    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()    
+	    
+	end)
+        end)
+    end
+    end
